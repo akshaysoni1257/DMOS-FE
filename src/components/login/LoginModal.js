@@ -4,7 +4,7 @@ import LinkButton from "../Button";
 import { useNavigate } from "react-router-dom";
 import validateForm from "../validateForm";
 
-
+// dummymodel
 const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hideMenu, validLogin, getUser }) => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ email: '', password: '' });
