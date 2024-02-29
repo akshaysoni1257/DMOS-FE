@@ -96,7 +96,7 @@ const Header = ({ loginModal,
               className="txt-white"
               to="/blog"
             >
-              Blog
+              Category
             </NavLink>
           </li>
           <li>
