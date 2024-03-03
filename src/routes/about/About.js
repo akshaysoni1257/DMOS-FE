@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+
+// about us
 //Components
 import ScrollBtn from "../../helpers/ScrollBtn";
 import AboutCollaboration from "./AboutCollaboration";
