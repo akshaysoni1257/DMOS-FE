@@ -3,6 +3,7 @@ import FooterMenu from "./FooterMenu";
 import FooterContact from "./FooterContact";
 import FooterLegal from "./FooterLegal";
 
+//Export functions
 export default class Footer extends React.Component {
   render() {
     return (
