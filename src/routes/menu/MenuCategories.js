@@ -8,7 +8,7 @@ const MenuCategories = ({ allCategories, changeCategory, resetPagination, findMe
   
   const [categories,setCategories] = useState([]);
   const fetchCategories = async () => {
-  const result = await axios.get("http://localhost:3000/admin/category/getCategories?page=1&limit=20",{
+  const result = await axios.get("http://localhost:3000/admin/category/getCategories",{
       headers:{
         Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjA1ODVjNDNiNzcyZThiMjNjZDhkMGEiLCJpYXQiOjE3MTE2Mzc5NTZ9.v0rOymDaLNk-w9oZigZylgf_vyNykQZq9Nagi8ezXt0"
       }

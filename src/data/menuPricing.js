@@ -11,7 +11,7 @@ const menuPricing = [
         img375: imgOne375,
         name: 'Cheese Pizza',
         price: 5.0,
-        currency: '$',
+        currency: 'Rs.',
         description:
             'Mozzarella is a classic cheese for pizza. However, feel free to change things up with additional toppings.',
     },
@@ -20,7 +20,7 @@ const menuPricing = [
         img375: imgTwo375,
         name: 'Veggie Pizza',
         price: 9.0,
-        currency: '$',
+        currency: 'Rs.',
         description:
             'Crescent-roll dough, baked in a log, becomes the perch for a ranch-dressing spread and fresh, crunchy vegetables.',
     },
@@ -29,7 +29,7 @@ const menuPricing = [
         img375: imgThree375,
         name: 'Pepperoni Pizza',
         price: 5.0,
-        currency: '$',
+        currency: 'Rs.',
         description:
             'Traditional pepperoni pizza is made with pizza sauce, mozzarella cheese, and pepperoni.',
     },
@@ -38,7 +38,7 @@ const menuPricing = [
         img375: imgFour375,
         name: 'Meat Pizza',
         price: 10.0,
-        currency: '$',
+        currency: 'Rs.',
         description:
             'The meat toppings can vary, but often include cooked and crumbled Italian sausage or ground beef, bacon, pepperoni, and sometimes sliced ham.',
     },
@@ -47,7 +47,7 @@ const menuPricing = [
         img375: imgFive375,
         name: 'Margherita Pizza',
         price: 8.0,
-        currency: '$',
+        currency: 'Rs.',
         description:
             'This margherita pizza recipe tastes like a woodfired pie from Italy! It stars a flavor-popping pizza sauce and perfectly chewy pizza crust.',
     },
@@ -56,7 +56,7 @@ const menuPricing = [
         img375: imgSix375,
         name: 'BBQ Chicken Pizza',
         price: 10.0,
-        currency: '$',
+        currency: 'Rs.',
         description:
             'Spicy barbecue sauce, diced chicken, cilantro, peppers, and onion all covered with cheese and baked to bubbly goodness!',
     },
