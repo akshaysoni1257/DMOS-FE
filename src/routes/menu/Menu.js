@@ -78,12 +78,13 @@ const Menu = ({
             return (
               <>
                 <article className="menu-grid-item flex-container flex-column txt-white">
-                  <img
-                    src={product.img}
-                    alt={`${product.name
-                    }`}
-                  />
-
+                  <div className="menu-item-link">
+                      <img
+                        src={product.img}
+                        alt={`${product.name
+                        }`}
+                      />
+                  </div>
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
                   <div className="price">
