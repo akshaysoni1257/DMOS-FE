@@ -80,10 +80,12 @@ const Menu = ({
                 <article className="menu-grid-item flex-container flex-column txt-white">
                   <img
                     src={product.img}
-                    alt={`${product.name}`}
+                    alt={`${product.name
+                    }`}
                   />
 
                   <h3>{product.name}</h3>
+                  <p>{product.description}</p>
                   <div className="price">
                     <p className="price-num">
                       <span>₹</span>
