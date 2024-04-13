@@ -88,7 +88,7 @@ const Menu = ({
                   <p>{product.description}</p>
                   <div className="price">
                     <p className="price-num">
-                      <span>₹</span>
+                      <span>Rs.</span>
                       {product.price}
                     </p>
                   </div>

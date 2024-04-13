@@ -32,7 +32,7 @@ const RootSection = () => {
       <MenuSlider />
       <Newsletter />
       <BlogPreview />
-      <ContactLanding />
+      {/* <ContactLanding /> */}
       <ScrollButton />
     </React.Fragment>
   );

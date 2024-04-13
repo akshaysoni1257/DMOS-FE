@@ -89,7 +89,8 @@ const Contact = () => {
       initial={{ opacity: 0, translateX: -300 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       exit={{ opacity: 0, translateX: -300 }}
-      transition={{ duration: 1 }}>
+      transition={{ duration: 1 }}
+      >
       {loading ?
         <section className="contact-loader">
           <p>Almost there...</p>
