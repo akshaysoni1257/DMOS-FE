@@ -1,6 +1,44 @@
 import React from "react";
+import Table from 'react-bootstrap/Table'
 //components
 import ChangeItemQuantity from "./ChangeItemQuantity";
+
+
+
+
+// const CartItem = () => {
+//   return (
+//     <React.Fragment>  
+//       <section className="card_details">
+//         <Table striped bordered hover>
+//             <thead>
+//               <tr>
+//                 <th style={{width: "70px" }}>No.</th>
+//                 <th>Category Name</th>
+//                 <th style={{width: "200px" }}>Action</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                   <td>werhh</td>
+//                   <td>werg </td>
+//                   <td>
+//                     {' '}
+//                     <div className='icon_wrap'>
+//                       <button className='edit' title='Edit' > <i class="fa fa-edit"></i> Edit </button>
+//                       <button className='delete' title='Delete'> <i class="fa fa-trash"></i> Delete </button>
+//                     </div>
+//                   </td>
+//                 </tr>
+//             </tbody>
+//         </Table>
+//       </section>
+//     </React.Fragment>
+//   );
+// }
+
+
+
 
 const CartItem = ({
   handleAddProduct,

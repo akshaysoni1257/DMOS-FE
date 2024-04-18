@@ -92,6 +92,7 @@ const Menu = ({
                       <span>Rs.</span>
                       {product.price}
                     </p>
+                    <button class="passive-button-style active-add-to-cart">Add to cart</button>
                   </div>
                 </article>
               </>

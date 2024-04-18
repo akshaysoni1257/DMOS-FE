@@ -160,7 +160,7 @@ const Header = ({ loginModal,
             </NavLink>
           </li> : null}
           <li>
-            {/* <div className="login-and-cart">
+            <div className="login-and-cart">
               {validLogin ? (
                 <Link
                   to="/"
@@ -195,7 +195,7 @@ const Header = ({ loginModal,
                 <p>Cart</p>
                 <p>({productsQuantity})</p>
               </NavLink>
-            </div> */}
+            </div>
           </li>
         </ul>
         <img
