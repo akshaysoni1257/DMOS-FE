@@ -139,7 +139,7 @@ const Contact = () => {
               />
             </div>
             <span className="input-validation-error">{formError.message}</span>
-            <ReCAPTCHA ref={captchaRef} sitekey={process.env.REACT_APP_CAPTCHA_KEY} theme="dark" />
+            {/* <ReCAPTCHA ref={captchaRef} theme="dark" /> */}
             <span className="input-validation-error">{captchaError}</span>
             <button type="submit" className="active-button-style" >
               Send
