@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import ResetLocation from "../../helpers/ResetLocation";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Menu = ({
   allProducts,
@@ -19,6 +20,7 @@ const Menu = ({
 }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const [endOffset, setEndOffset] = useState(itemOffset + 5);
+  const navigate = useNavigate();
   const [currentProducts, setcurrentProducts] = useState(
     [...allProducts].reverse().slice(itemOffset, endOffset)
   );
@@ -46,6 +48,22 @@ const Menu = ({
   useEffect(() => {
     getProducts();
   }, []);
+
+  //Add to cart
+  const gettoken = localStorage.getItem("token");
+  const addToCart = async (id) => {
+    let response = await axios.post("http://localhost:3001/customer/cart/add-to-cart",
+      { productId: id, quantity: 1 },
+      {
+        headers: {
+          Authorization: `Bearer ${gettoken}`,
+        },
+      }
+    );
+    if (response.status === 200) {
+      navigate("/cart");
+    }
+  };
 
   useEffect(() => {
     document.title = `${activeCategory} | Pizza Time`;
@@ -79,11 +97,7 @@ const Menu = ({
               <>
                 <article className="menu-grid-item flex-container flex-column txt-white">
                   <div className="menu-item-link">
-                      <img
-                        src={product.img}
-                        alt={`${product.name
-                        }`}
-                      />
+                    <img src={product.img} alt={`${product.name}`} />
                   </div>
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
@@ -92,7 +106,12 @@ const Menu = ({
                       <span>Rs.</span>
                       {product.price}
                     </p>
-                    <button class="passive-button-style active-add-to-cart">Add to cart</button>
+                    <button
+                      onClick={() => addToCart(product._id)}
+                      class="passive-button-style active-add-to-cart"
+                    >
+                      Add to cart
+                    </button>
                   </div>
                 </article>
               </>
