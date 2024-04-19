@@ -25,6 +25,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
     e.preventDefault();
     const response = await axios.post("http://localhost:3001/user/customerLogin",formData);
     if(response.status === 200) {
+      localStorage.setItem('token', response.data.data.token)
       toast("Login success!");
       setFormData({
         email:"",

@@ -1007,7 +1007,7 @@ hr {
   color: var(--pizza-red);
   position: fixed;
   right: 10px;
-  bottom: 150px;
+  bottom: 15px;
   transition: right 0.5s;
   cursor: pointer;
   font-size: 20px;

@@ -5,15 +5,15 @@ const ChangeItemQuantity = ({ handleAddProduct, handleRemoveProduct, cartItem })
     <section className="cart-item-add-qty">
       <button
         onClick={() => {
-          handleAddProduct(cartItem, cartItem.userSelectedAttributes);
+          handleAddProduct(cartItem.product, cartItem.userSelectedAttributes);
         }}
       >
         +
       </button>
-      <p>{cartItem.quantity}</p>
+      <p>{cartItem?.quantity}</p>
       <button
         onClick={() => {
-          handleRemoveProduct(cartItem, cartItem.userSelectedAttributes);
+          handleRemoveProduct(cartItem.product, cartItem.userSelectedAttributes);
         }}
       >
         -

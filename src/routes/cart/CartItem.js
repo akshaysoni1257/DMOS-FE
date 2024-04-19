@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 import Table from 'react-bootstrap/Table'
 //components
 import ChangeItemQuantity from "./ChangeItemQuantity";
@@ -45,7 +47,20 @@ const CartItem = ({
   handleRemoveProduct,
   clearCart,
   cartItems, cartTotals }) => {
-  return (
+
+  const gettoken = localStorage.getItem("token");
+    const getCartItems=async()=>{
+      const response = await axios.get("http://localhost:3001/customer/cart/view-cart",{
+          headers: {
+            Authorization: `Bearer ${gettoken}`,
+          },
+        });
+        console.log(response,"111");
+    } 
+    useEffect(()=>{
+      getCartItems()
+    },[])
+    return (
     <React.Fragment>
       {cartItems.map((cartItem, index) => {
         return (
