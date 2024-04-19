@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@progress/kendo-react-inputs": "^7.4.0",
+    "@progress/kendo-react-labels": "^7.4.0",
     "@react-spring/parallax": "^9.6.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -28,6 +30,7 @@
     "react-parallax-tilt": "^1.7.99",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.5",
     "uuid": "^9.0.0",
     "vanilla-tilt": "^1.8.0",
     "web-vitals": "^2.1.4"
