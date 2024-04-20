@@ -9,7 +9,7 @@ const EmptyCart = () => {
     <React.Fragment>
 
       
-      <div className="cart_table col-md-6">
+      {/* <div className="cart_table col-md-6">
         <Table>
             <thead>
               <tr>
@@ -50,10 +50,9 @@ const EmptyCart = () => {
               <a aria-current="page" class="passive-button-style txt-white" href="/menu" style={{  }}><p>Back to Menu</p></a>
             </div>
         </div>
-      </div>
+      </div> */}
         
-
-
+        
     <div className="empty_cart">
       <h3>Oh, no, your cart is empty</h3>
       <p>Seems like you have not added anything to your cart yet.</p>
