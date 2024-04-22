@@ -72,6 +72,9 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
                 <p className="login-input-err">We couldn't find an account. Try another credentials</p> :
                 null} */}
               <section className="login-and-signup">
+                <button type="button" className="modal-login-btn" onClick={handleSubmited}>Log in</button>
+              </section>
+              <section className="login-and-signup">
                 <LinkButton
                   onClick={() => {
                     hideLoginModal();
@@ -83,9 +86,6 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
                   Sign up
                 </LinkButton>
                 
-              </section>
-              <section className="login-and-signup">
-                <button type="button" className="modal-login-btn" onClick={handleSubmited}>Log in</button>
               </section>
             </form>
          

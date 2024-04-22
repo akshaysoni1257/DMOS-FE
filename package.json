@@ -6,6 +6,7 @@
     "@progress/kendo-react-inputs": "^7.4.0",
     "@progress/kendo-react-labels": "^7.4.0",
     "@react-spring/parallax": "^9.6.1",
+    "@stripe/react-stripe-js": "^2.7.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",

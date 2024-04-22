@@ -118,6 +118,7 @@ function App() {
 
   const handleLogout = () => {
     setValidLogin(false);
+    localStorage.removeItem('token');
     hideMenu();
     setCurrentUser({});
     ResetLocation();
