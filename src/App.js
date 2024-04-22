@@ -24,6 +24,8 @@ import NotFound from './routes/not-found/NotFound.js';
 import Refunds from './routes/refunds/Refunds.js';
 import Terms from './routes/terms/Terms.js';
 import Privacy from './routes/privacy/Privacy.js';
+import Sucess from './routes/sucess/sucess.js';
+import Failed from './routes/failed/failed.js';
 import Careers from './routes/careers/Careers.js';
 import BlogPost from './routes/blog-post/BlogPost.js';
 import Profile from './routes/profile/Profile.js';
@@ -522,6 +524,8 @@ function App() {
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/sucess" element={<Sucess />} />
+        <Route path="/failed" element={<Failed />} />
       </Routes>
 
       <Footer />
