@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import {loadStripe} from '@stripe/stripe-js';
 //components
 import ScrollBtn from "../../helpers/ScrollBtn";
 import ChangeItemQuantity from "./ChangeItemQuantity";
@@ -85,6 +86,28 @@ const Cart = () => {
   useEffect(() => {
     document.title = "Shopping Cart | Pizza Time";
   }, []);
+
+  //Stripe payment method
+  const makepayment = async () => {
+    const stripe = await loadStripe("pk_test_51OiHsJSIkl1oWwSRF3ovlMnpVyeOhXea1POEdigIiv9w4fpfS6376oQtE1vKmxeAeieDbHLMR7WdYcmeAfwtwzto009ifvQmjC")
+    const response = await axios.post(
+      'http://localhost:3001/customer/order/create-order',
+      // Request body
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${gettoken}`,
+        },
+      }
+    );
+      const session = response.data; // Access response data directly using response.data
+      const result = stripe.redirectToCheckout({
+        sessionId: session.sessionId
+      });
+      if (result.error) {
+        console.log(result.error);
+      }      
+  }
   return (
     <main className="cart">
       <h2>Shopping cart</h2>
@@ -165,6 +188,7 @@ const Cart = () => {
                   <a
                     aria-current="page"
                     class="cart-btn active-button-style txt-white active"
+                    onClick={makepayment}
                   >
                     <p>Checkout</p>
                   </a>
