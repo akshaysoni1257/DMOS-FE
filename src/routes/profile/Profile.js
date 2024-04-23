@@ -57,9 +57,11 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
+  const navigate=useNavigate()
 
   const gettoken = localStorage.getItem("token");
   const getUserProfile = async () => {
@@ -119,7 +121,7 @@ const Profile = () => {
       </article>
 
       <section className="profile-buttons">
-        <button type="button" className="active-button-style" href="/menu">
+        <button onClick={()=>navigate("/menu")} type="button" className="active-button-style" href="/menu">
           Back to Menu
         </button>
       </section>
