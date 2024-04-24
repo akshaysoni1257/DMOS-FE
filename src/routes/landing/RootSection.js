@@ -30,8 +30,8 @@ const RootSection = () => {
       <Gallery />
       <StatsPreview />
       <MenuSlider />
-      <Newsletter />
       <BlogPreview />
+      <Newsletter />
       {/* <ContactLanding /> */}
       <ScrollButton />
     </React.Fragment>
