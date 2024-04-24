@@ -4,12 +4,15 @@ const ChangeItemQuantity = ({ handleAddProduct, handleRemoveProduct, cartItem })
   return (
 
     <div className="main_div">
-      <button onClick={() => {handleAddProduct(cartItem.product, cartItem.userSelectedAttributes);}}> 
+      {/* <button onClick={() => {handleAddProduct(cartItem.product, cartItem.userSelectedAttributes);}}> 
         <i class="fa fa-plus" aria-hidden="true"></i> 
-      </button>
-      <label> {cartItem?.quantity} </label>
+      </button> */}
       <button onClick={() => {handleRemoveProduct(cartItem.product, cartItem.userSelectedAttributes);}}>
         <i class="fa fa-minus" aria-hidden="true"></i>
+      </button>
+      <label> {cartItem?.quantity} </label>
+      <button onClick={() => {handleAddProduct(cartItem.product, cartItem.userSelectedAttributes);}}> 
+        <i class="fa fa-plus" aria-hidden="true"></i> 
       </button>
     </div>
     
