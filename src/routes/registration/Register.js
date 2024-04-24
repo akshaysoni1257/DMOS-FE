@@ -10,11 +10,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 
   const [formData, setFormData] = useState({
-    firstname:"",
-    lastname:"",
+    first_name:"",
+    last_name:"",
     email:"",
     password:"",
-    number:""
+    phone:""
   })
 
   const handleChange = (e) => {
@@ -30,11 +30,11 @@ const Register = () => {
     if(response.status === 200) {
       toast("Registration success!");
       setFormData({
-        firstname:"",
-        lastname:"",
+        first_name:"",
+        last_name:"",
         email:"",
         password:"",
-        number:""
+        phone:""
       })
     }
     console.log(response);
@@ -47,12 +47,12 @@ const Register = () => {
       <form className="registration-form">
         {/* {registrationFail ? <p className="registration-input-err">Seems like this email has already been registered!</p> : null} */}
         <section className="name-section">
-          <input type="text" placeholder="First name" name="firstname" value={formData.firstname}
+          <input type="text" placeholder="First name" name="first_name" value={formData.first_name}
             onChange={handleChange} />
           {/* <span className="registration-input-err">{formError.firstname}</span> */}
         </section>
         <section className="name-section">
-          <input type="text" placeholder="Last name" name="lastname" value={formData.lastname}
+          <input type="text" placeholder="Last name" name="last_name" value={formData.last_name}
             onChange={handleChange} />
           {/* <span className="registration-input-err">{formError.lastname}</span> */}
         </section>
@@ -69,7 +69,7 @@ const Register = () => {
         </section>
         
         <section className="birthday">
-          <input type="text" placeholder="Phone Number" name="number" value={formData.number}
+          <input type="text" placeholder="Phone Number" name="phone" value={formData.phone}
             onChange={handleChange} />
           {/* <span className="registration-input-err">{formError.number}</span> */}
         </section>
