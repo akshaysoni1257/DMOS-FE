@@ -9,56 +9,50 @@ const menuPricing = [
     {
         id: 1,
         img375: imgOne375,
-        name: 'Cheese Pizza',
-        price: 5.0,
+        name: 'Cheese Burst',
+        price: 450,
         currency: 'Rs.',
-        description:
-            'Mozzarella is a classic cheese for pizza. However, feel free to change things up with additional toppings.',
+        description: 'Crust with oodles of yummy liquid Dairy cheese sauce filled inside',
     },
     {
         id: 2,
         img375: imgTwo375,
-        name: 'Veggie Pizza',
-        price: 9.0,
+        name: 'Paneer Paratha Pizza',
+        price: 360,
         currency: 'Rs.',
-        description:
-            'Crescent-roll dough, baked in a log, becomes the perch for a ranch-dressing spread and fresh, crunchy vegetables.',
+        description: 'An epic fusion of paratha and pizza with melting cheese & soft paneer fillings to satisfy all your indulgent cravings',
     },
     {
         id: 3,
         img375: imgThree375,
-        name: 'Pepperoni Pizza',
-        price: 5.0,
+        name: 'Corn N Cheese Paratha Pizza',
+        price: 250,
         currency: 'Rs.',
-        description:
-            'Traditional pepperoni pizza is made with pizza sauce, mozzarella cheese, and pepperoni.',
+        description: 'A crazy fusion like never before. A delicious fusion of corn stuffed paratha and cheesy pizza.',
     },
     {
         id: 4,
         img375: imgFour375,
-        name: 'Meat Pizza',
-        price: 10.0,
+        name: 'Indi Tandoori Paneer',
+        price: 500,
         currency: 'Rs.',
-        description:
-            'The meat toppings can vary, but often include cooked and crumbled Italian sausage or ground beef, bacon, pepperoni, and sometimes sliced ham.',
+        description: 'It is hot. It is spicy. It is oh-so-Indian. Tandoori paneer with capsicum I red paprika I mint mayo',
     },
     {
         id: 5,
         img375: imgFive375,
-        name: 'Margherita Pizza',
-        price: 8.0,
+        name: 'Tikka Masala Pasta Veg',
+        price: 129,
         currency: 'Rs.',
-        description:
-            'This margherita pizza recipe tastes like a woodfired pie from Italy! It stars a flavor-popping pizza sauce and perfectly chewy pizza crust.',
+        description: 'Instant Fusilli Pasta, Spicy Red dressing, Onion, Paneer Tikka, Parsley sprinkle',
     },
     {
         id: 6,
         img375: imgSix375,
-        name: 'BBQ Chicken Pizza',
-        price: 10.0,
+        name: 'Creamy Tomato Pasta Veg',
+        price: 150,
         currency: 'Rs.',
-        description:
-            'Spicy barbecue sauce, diced chicken, cilantro, peppers, and onion all covered with cheese and baked to bubbly goodness!',
+        description: 'Instant Fusilli Pasta, Creamy Culinary Dressing, Onion, Olive, Green Capsicum, Parsley sprinkle',
     },
 ]
 

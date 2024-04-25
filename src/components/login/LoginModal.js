@@ -8,12 +8,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // dummymodel
+
 const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hideMenu, validLogin, getUser }) => {
+  
+
+  const [validError, setValidError] = useState(null);
+
+
   const [formData, setFormData] = useState({
     email:"",
     password:""
   })
-
+  
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormData({
@@ -24,6 +30,17 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
   const handleSubmited = async (e) => {
     e.preventDefault();
     const response = await axios.post("http://localhost:3001/user/customerLogin",formData);
+
+    if (!formData.email ) {
+      setValidError('Please enter your email address');
+      return
+    } if (!formData.password){
+      setValidError('Please enter your password');
+      return
+    }
+
+    setValidError(null);
+
     if(response.status === 200) {
       localStorage.setItem('token', response.data.data.token)
       toast.success("Login success!");
@@ -36,6 +53,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
     } else {
       setValidLogin(false)
     }
+
     console.log(response);
   }
 
@@ -61,19 +79,18 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
           <h2>Log in</h2>
           
             <form>
-              
               <input onChange={handleChange} value={formData.email} name="email" type="text" placeholder="Email" />
-              {/* <span className="login-input-err">{formError.email}</span> */}
+              {validError && !formData.password && <p className='error'>{validError}</p>}
+              {/* <p className='error'> {validError ? 'Please enter your email address' : ''} </p> */}
+              {/* {validError && !formData.email && <p className='error'>{validError}</p>} */}
+
               <input onChange={handleChange} value={formData.password} name="password" type="password" autoComplete="true" placeholder="Password" />
-              {/* <span className="login-input-err">{formError.password}</span> */}
+              {validError && !formData.password && <p className='error'>{validError}</p>}
+              {/* <p className='error'> {validError ? 'Please enter your password' : ''} </p> */}
+              {/* {validError && !formData.password && <p className='error'>{validError}</p>} */}
 
 
-              {/* {submit && Object.keys(formError).length === 0 && !validLogin ?
-                <p className="login-input-err">We couldn't find an account. Try another credentials</p> :
-                null} */}
-              <section className="login-and-signup">
-                <button type="button" className="modal-login-btn" onClick={handleSubmited}>Log in</button>
-              </section>
+              
               <section className="login-and-signup">
                 <LinkButton
                   onClick={() => {
@@ -85,7 +102,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
                 >
                   Sign up
                 </LinkButton>
-                
+                <button type="button" className="modal-login-btn" onClick={handleSubmited}>Log in</button>
               </section>
             </form>
          

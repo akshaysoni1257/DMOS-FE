@@ -45,6 +45,7 @@ const Register = () => {
       <ToastContainer />
       
       <form className="registration-form">
+        <h1> Register </h1>
         {/* {registrationFail ? <p className="registration-input-err">Seems like this email has already been registered!</p> : null} */}
         <section className="name-section">
           <input type="text" placeholder="First name" name="first_name" value={formData.first_name}

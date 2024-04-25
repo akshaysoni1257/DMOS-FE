@@ -201,3 +201,12 @@ select {
   height: 10rem;
   object-fit: cover;
 }
+.registration-form {
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+.registration-form h1 {
+  text-align: center;
+  font-weight: 600;
+  color: #ffffff;
+}

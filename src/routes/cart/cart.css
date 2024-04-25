@@ -280,12 +280,15 @@
   text-align: left;
 }
 
-.cart_table button {
+.main_div button {
   padding: 5px;
   border: #ff6240;
   color: #ffffff;
   background: #ff6240;
   cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
 }
 .cart_table .quantity {
   display: flex;
