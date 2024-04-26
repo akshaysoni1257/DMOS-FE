@@ -28,7 +28,7 @@ const Register = () => {
     e.preventDefault();
     const response = await axios.post("http://localhost:3001/user/customerregister",formData);
     if(response.status === 200) {
-      toast("Registration success!");
+      toast.success("Registration success!");
       setFormData({
         first_name:"",
         last_name:"",
@@ -81,7 +81,7 @@ const Register = () => {
           out any time.
         </p>
 
-        <button className="register-btn" type="button" onClick={handleSubmited}>Sign up</button>
+        <button className="register-btn" type="button" onClick={handleSubmited}to="/login">Sign up</button>
         </form>
 
     </main>

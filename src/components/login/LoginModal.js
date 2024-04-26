@@ -29,21 +29,19 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
   }
   const handleSubmited = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3001/user/customerLogin",formData);
 
-    if (!formData.email ) {
-      setValidError('Please enter your email address');
-      return
-    } if (!formData.password){
-      setValidError('Please enter your password');
-      return
+    // Check if email and password are entered
+    if (!formData.email || !formData.password) {
+      setValidError('Please enter both email and password');
+      return;
+    } else {
+      setValidError(null);
     }
 
-    setValidError(null);
-
+    const response = await axios.post("http://localhost:3001/user/customerLogin",formData);
     if(response.status === 200) {
       localStorage.setItem('token', response.data.data.token)
-      toast.success("Login success!");
+      toast.success("Login successfully!");
       setFormData({
         email:"",
         password:""
@@ -54,7 +52,7 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
       setValidLogin(false)
     }
 
-    console.log(response);
+    console.log(response,"======responce");
   }
 
   const hideLoginModal = () => {
@@ -80,17 +78,8 @@ const LoginModal = ({ setLoginModalWindow, setValidLogin, loginModalWindow, hide
           
             <form>
               <input onChange={handleChange} value={formData.email} name="email" type="text" placeholder="Email" />
-              {validError && !formData.password && <p className='error'>{validError}</p>}
-              {/* <p className='error'> {validError ? 'Please enter your email address' : ''} </p> */}
-              {/* {validError && !formData.email && <p className='error'>{validError}</p>} */}
-
               <input onChange={handleChange} value={formData.password} name="password" type="password" autoComplete="true" placeholder="Password" />
-              {validError && !formData.password && <p className='error'>{validError}</p>}
-              {/* <p className='error'> {validError ? 'Please enter your password' : ''} </p> */}
-              {/* {validError && !formData.password && <p className='error'>{validError}</p>} */}
-
-
-              
+              {validError && <p className='error' style={{ color: 'red' }}>{validError}</p>}
               <section className="login-and-signup">
                 <LinkButton
                   onClick={() => {
