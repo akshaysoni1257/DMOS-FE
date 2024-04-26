@@ -29,6 +29,7 @@ import Failed from './routes/failed/failed.js';
 import Careers from './routes/careers/Careers.js';
 import BlogPost from './routes/blog-post/BlogPost.js';
 import Profile from './routes/profile/Profile.js';
+import Orders from './routes/order/orders.js';
 import ResetLocation from './helpers/ResetLocation.js';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.min.js';
@@ -490,6 +491,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/register" element={validLogin ? <NotFound /> : <Register activateLoginModal={activateLoginModal} />} />
         <Route path="/profile" element={!validLogin ? <NotFound /> : <Profile currentUser={currentUser} getUser={getUser} handleLogout={handleLogout} updateUser={updateUser} />} />
+        <Route path="/orders" element={<Orders />} />
         <Route
           path="/checkout"
           element={

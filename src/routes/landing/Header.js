@@ -139,6 +139,26 @@ const Header = ({ loginModal,
               Contact
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              onClick={() => {
+                ResetLocation()
+                hideMenu()
+              }}
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                    textDecoration: 'none',
+                    color: '#ff6240',
+                  }
+                  : {}
+              }
+              className="txt-white"
+              to="/orders"
+            >
+              Orders
+            </NavLink>
+          </li>
           {validLogin ? <li>
             <NavLink
               onClick={() => {
