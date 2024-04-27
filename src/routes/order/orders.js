@@ -38,32 +38,34 @@ const Orders = () => {
   }
 
   return (
-    <div className="data-order">
-      <h2><span style={{ color: 'white', textAlign: 'center' }}>View Orders</span></h2>
-      <table className="cart-table">
-        <thead>
-          <tr>
-            <th className="customer-header">Customer</th>
-            <th className="product-header">Product</th>
-            <th className="quantity-header">Quantity</th>
-            <th className="total-price-header">Total Price</th>
-            <th className="status-header">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => (
-            order.items.map((item, index) => (
-              <tr key={index}>
-                <td className="customer-data" style={{ color: 'white'}}>{order.customer.first_name}</td>
-                <td className="product-data" style={{ color: 'white'}}>{item.product.name}</td>
-                <td className="quantity-data" style={{ color: 'white'}}>{item.quantity}</td>
-                <td className="total-price-data" style={{ color: 'white'}}>{item.totalPrice}</td>
-                <td className="status-data" style={{ color: 'white'}}>{order.status}</td>
-              </tr>
-            ))
-          ))}
-        </tbody>
-      </table>
+    <div className="order_details">
+      <h2><span>Order Details</span></h2>
+      <div className="cart_table">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Total Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((order) => (
+              order.items.map((item, index) => (
+                <tr key={index}>
+                  <td className="customer-data">{order.customer.first_name}</td>
+                  <td className="product-data">{item.product.name}</td>
+                  <td className="quantity-data">{item.quantity}</td>
+                  <td className="total-price-data">{item.totalPrice}</td>
+                  <td className="status-data">{order.status}</td>
+                </tr>
+              ))
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
