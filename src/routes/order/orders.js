@@ -32,7 +32,9 @@ const Orders = () => {
   }, []);
 
   if (!authenticated) {
-    return <div style={{ color: 'white', textAlign: 'center' }}>Please log in to view orders</div>;
+    return <div style={{ color: 'white', textAlign: 'center' , fontSize:'50px', marginTop:'50px'}}>Orders
+    <br></br>Oh, no, your orders is empty<br></br><p style={{fontSize:'20px', marginTop:'30px'}}>please login to see your orders</p>
+   </div>;
   }
 
   return (
