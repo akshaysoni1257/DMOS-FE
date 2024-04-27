@@ -1,55 +1,69 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './orders.css'; // Import your CSS file
 
-const gettoken = localStorage.getItem("token");
 const Orders = () => {
-    const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [authenticated, setAuthenticated] = useState(false);
 
-    useEffect(() => {
-        axios.get("http://localhost:3001/customer/order/view-orders",{
-            headers: {
-                Authorization: `Bearer ${gettoken}`,
-              },
-        })
-            .then(response => {
-                setOrders(response.data);
-            })
-            .catch(error => {
-                console.error("Error fetching orders:", error);
-            });
-    }, []);
+  useEffect(() => {
+    const getOrders = async () => {
+      try {
+        const gettoken = localStorage.getItem("token");
+        if (!gettoken) {
+          // User not logged in
+          setAuthenticated(false);
+          return;
+        }
 
-    return (
-        <div className='data-order'>
-            <h2>View Orders</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                        <th>Status</th>
-                        <th>Created At</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {orders.map(order => (
-                        <tr key={order._id}>
-                            <td>{order._id}</td>
-                            <td>{order.customer}</td>
-                            <td>{order.items[0].product}</td>
-                            <td>{order.items[0].quantity}</td>
-                            <td>{order.items[0].totalPrice}</td>
-                            <td>{order.status}</td>
-                            <td>{new Date(order.createdAt).toLocaleString()}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
+        const response = await axios.get("http://localhost:3001/customer/order/view-orders", {
+          headers: {
+            Authorization: `Bearer ${gettoken}`,
+          },
+        });
+        setOrders(response.data);
+        setAuthenticated(true);
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
+
+    getOrders();
+  }, []);
+
+  if (!authenticated) {
+    return <div style={{ color: 'white', textAlign: 'center' }}>Please log in to view orders</div>;
+  }
+
+  return (
+    <div className="data-order">
+      <h2><span style={{ color: 'white', textAlign: 'center' }}>View Orders</span></h2>
+      <table className="cart-table">
+        <thead>
+          <tr>
+            <th className="customer-header">Customer</th>
+            <th className="product-header">Product</th>
+            <th className="quantity-header">Quantity</th>
+            <th className="total-price-header">Total Price</th>
+            <th className="status-header">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((order) => (
+            order.items.map((item, index) => (
+              <tr key={index}>
+                <td className="customer-data" style={{ color: 'white'}}>{order.customer.first_name}</td>
+                <td className="product-data" style={{ color: 'white'}}>{item.product.name}</td>
+                <td className="quantity-data" style={{ color: 'white'}}>{item.quantity}</td>
+                <td className="total-price-data" style={{ color: 'white'}}>{item.totalPrice}</td>
+                <td className="status-data" style={{ color: 'white'}}>{order.status}</td>
+              </tr>
+            ))
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default Orders;
